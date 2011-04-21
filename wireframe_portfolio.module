@@ -1,0 +1,57 @@
+<?php
+
+/**
+ * Implements hook_views_api().
+ */
+function wireframe_portfolio_views_api() {
+  return array(
+    'api' => '3.0-alpha1',
+    'path' => drupal_get_path('module', 'wireframe_portfolio'),
+  );
+}
+
+function wireframe_portfolio_image_default_styles() {
+  $styles = array();
+
+  $styles['wireframe_thumbnail'] = array(
+    'effects' => array(
+      array(
+        'name' => 'image_scale',
+        'data' => array('width' => 120, 'height' => 147, 'upscale' => 0),
+        'weight' => 0,
+      ),
+    )
+  );
+  
+  $styles['wireframe_medium'] = array(
+    'effects' => array(
+      array(
+        'name' => 'image_scale_and_crop',
+        'data' => array('width' => 220, 'height' => 147, 'upscale' => 0),
+        'weight' => 0,
+      ),
+    )
+  );
+  
+  $styles['wireframe_large'] = array(
+    'effects' => array(
+      array(
+        'name' => 'image_scale',
+        'data' => array('width' => 700, 'height' => '', 'upscale' => 0),
+        'weight' => 0,
+      ),
+    )
+  );
+  
+  $styles['wireframe_full'] = array(
+    'effects' => array(
+      array(
+        'name' => 'image_scale',
+        'data' => array('width' => 960, 'upscale' => 0),
+        'weight' => 0,
+      ),
+    )
+  );
+  
+  return $styles;
+}

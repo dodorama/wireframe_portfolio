@@ -1,0 +1,6 @@
+name = Wireframe Portfolio
+description = A portfolio feature.
+package = wireframe package
+core = 7.x
+files[] = wireframe_portfolio.module
+dependencies[] = "views"
